@@ -1,22 +1,18 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchUsers } from './operations';
+import { IUsersState } from '../../interfaces/user.interface';
+import * as usersReducers from '../../utils/reduxActionHandlers/usersActionHandlers';
 
-export type User = {
-  id: number;
-  name: string;
-  username: string;
-  phone: string;
-};
+const initialState: IUsersState = { users: [], isFetching: false, error: null };
 
-// type Users = Array<User>;
-
-type UsersState = {
-  users: User[];
-  isLoading: boolean;
-  error: any;
-};
-
-const initialState: UsersState = { users: [], isLoading: false, error: null };
-
-const usersSlice = createSlice({ name: 'users', initialState, reducers: {} });
+const usersSlice = createSlice({
+  name: 'users',
+  initialState,
+  reducers: {},
+  extraReducers: builder =>
+    builder
+      .addCase(fetchUsers.pending, usersReducers.handleFetchUsersPending)
+      .addCase(fetchUsers.fulfilled, usersReducers.handleFetchUsersFulfilled),
+});
 
 export const usersReducer = usersSlice.reducer;
