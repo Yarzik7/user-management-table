@@ -2,11 +2,11 @@ import './App.css';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux/reduxHooks';
 import { fetchUsers } from '../../redux/users/operations';
-import { selectUsers } from '../../redux/users/selectors';
+import { selectVisibleUsers } from '../../redux/users/selectors';
 import Filter from '../Filter/Filter';
 
 function App() {
-  const users = useAppSelector(selectUsers);
+  const users = useAppSelector(selectVisibleUsers);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
