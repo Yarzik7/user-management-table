@@ -1,0 +1,31 @@
+.inputContainer {
+  padding: 10px;
+  flex-basis: calc(100% / 4);
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: var(--primary-white-color);
+}
+
+.input {
+  width: 100%;
+  padding: 8px 10px;
+
+  color: var(--primary-text-color);
+
+  border: none;
+  border-radius: 8px;
+
+  transition: outline 200ms ease-in;
+
+  &:focus {
+    outline: 2px solid var(--accent-color);
+  }
+}
+
+/* .input:focus {
+  outline: 1px solid var(--accent-color);
+} */

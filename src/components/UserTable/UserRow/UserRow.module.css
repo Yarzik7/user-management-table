@@ -1,0 +1,24 @@
+.userTableRow {
+  border-bottom: 1px solid rgb(182, 27, 27);
+}
+
+/* .userTableRow:nth-child(2n) {
+  background-color: rgb(235, 235, 235);
+  transition: background-color 0.2s ease-in;
+}
+
+.userTableRow:hover {
+  background-color: rgb(170, 117, 220);
+} */
+
+.userTableCell {
+  width: calc(100% / 4);
+  padding: 10px;
+
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+
+.userTablePhoneCell {
+  /* text-align: right; */
+}

@@ -4,8 +4,10 @@ import { changeFilter } from '../../redux/filter/filterSlice';
 import { selectFilterValues } from '../../redux/filter/selectors';
 import { useAppSelector, useAppDispatch } from '../../hooks/redux/reduxHooks';
 import { IFilterState } from '../../interfaces/filter.interface';
+import css from './Filter.module.css';
 
 const Filter = () => {
+  // console.log('Render Filter');
   const { name, username, email, phone } = useAppSelector(selectFilterValues);
 
   const dispatch = useAppDispatch();
@@ -16,7 +18,7 @@ const Filter = () => {
   };
 
   return (
-    <div>
+    <div className={css.filterContainer}>
       <Input name="name" label="Name" placeholder="Name" value={name} onChange={onChangeFilter} />
       <Input name="username" label="Username" placeholder="Username" value={username} onChange={onChangeFilter} />
       <Input name="email" label="Email" placeholder="Email" value={email} onChange={onChangeFilter} />

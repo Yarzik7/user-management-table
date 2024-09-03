@@ -1,0 +1,8 @@
+.filterContainer {
+  width: 100%;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: var(--bg-table-head);
+}

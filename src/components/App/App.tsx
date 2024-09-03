@@ -1,12 +1,12 @@
 import './App.css';
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux/reduxHooks';
+import { useAppDispatch } from '../../hooks/redux/reduxHooks';
 import { fetchUsers } from '../../redux/users/operations';
-import { selectVisibleUsers } from '../../redux/users/selectors';
 import Filter from '../Filter/Filter';
+import UserTable from '../UserTable/UserTable';
 
 function App() {
-  const users = useAppSelector(selectVisibleUsers);
+  // console.log("Render App");
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -14,17 +14,13 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
-      <Filter />
-      {users.map(({ id, name, username, email, phone }) => (
-        <div key={id} style={{ display: 'flex', gap: 50, marginBottom: 20 }}>
-          <span>{name}</span>
-          <span>{username}</span>
-          <span>{email}</span>
-          <span>{phone}</span>
-        </div>
-      ))}
-    </div>
+    <section>
+      <div className="container">
+        <h1 className="head">User Management Table</h1>
+        <Filter />
+        <UserTable />
+      </div>
+    </section>
   );
 }
 
