@@ -4,11 +4,11 @@ import { changeFilter } from '../../redux/filter/filterSlice';
 import { selectFilterValues } from '../../redux/filter/selectors';
 import { useAppSelector, useAppDispatch } from '../../hooks/redux/reduxHooks';
 import { IFilterState } from '../../interfaces/filter.interface';
+import { INPUT_CONFIG, FILTER_HEADING } from '../../constants/filterConfig';
 import css from './Filter.module.css';
 
 const Filter = () => {
-  // console.log('Render Filter');
-  const { name, username, email, phone } = useAppSelector(selectFilterValues);
+  const filterValues = useAppSelector(selectFilterValues);
 
   const dispatch = useAppDispatch();
 
@@ -19,10 +19,20 @@ const Filter = () => {
 
   return (
     <div className={css.filterContainer}>
-      <Input name="name" label="Name" placeholder="Name" value={name} onChange={onChangeFilter} />
-      <Input name="username" label="Username" placeholder="Username" value={username} onChange={onChangeFilter} />
-      <Input name="email" label="Email" placeholder="Email" value={email} onChange={onChangeFilter} />
-      <Input name="phone" label="Phone" placeholder="Phone" value={phone} onChange={onChangeFilter} />
+      <h2 className={css.filterHeading}>{FILTER_HEADING}</h2>
+      <ul className={css.filterInputList}>
+        {INPUT_CONFIG.map(({ name, placeholder, label }) => (
+          <li key={name} className={css.filterInputListItem}>
+            <Input
+              name={name}
+              label={label}
+              placeholder={placeholder}
+              value={filterValues[name]}
+              onChange={onChangeFilter}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

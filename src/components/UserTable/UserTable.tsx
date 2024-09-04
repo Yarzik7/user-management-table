@@ -1,28 +1,43 @@
 import UserRow from './UserRow/UserRow';
+import Loader from '../Loader/Loader';
+import Message from '../Message/Message';
+import { MessageType } from '../../constants/messages';
 import { useAppSelector } from '../../hooks/redux/reduxHooks';
-import { selectVisibleUsers } from '../../redux/users/selectors';
+import { selectVisibleUsers, selectIsFetching, selectError } from '../../redux/users/selectors';
+import { FIELDS } from '../../constants/fields';
 import css from './UserTable.module.css';
 
 const UserTable = () => {
-  //   console.log('Render UserTable');
   const users = useAppSelector(selectVisibleUsers);
+  const isFetching = useAppSelector(selectIsFetching);
+  const error = useAppSelector(selectError);
+
+  const isErrorVisible = !!error && !isFetching;
 
   return (
-    <table className={css.userTable}>
-      <thead>
-        <tr className={css.userTableHeadRow}>
-          <th className={css.userTableHead}>{'Name'}</th>
-          <th className={css.userTableHead}>{'Username'}</th>
-          <th className={css.userTableHead}>{'Email'}</th>
-          <th className={css.userTableHead}>{'Phone'}</th>
-        </tr>
-      </thead>
-      <tbody className={css.userTableBody}>
-        {users.map(({ id, name, username, email, phone }) => (
-          <UserRow key={id} name={name} username={username} email={email} phone={phone} />
-        ))}
-      </tbody>
-    </table>
+    <div className={css.userTableContainer}>
+      <table className={css.userTable}>
+        <thead>
+          <tr className={css.userTableHeadRow}>
+            {FIELDS.map(field => (
+              <th key={field} className={css.userTableHead}>
+                {field}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {users.map(({ id, name, username, email, phone }) => (
+            <UserRow key={id} name={name} username={username} email={email} phone={phone} />
+          ))}
+        </tbody>
+      </table>
+      <div className={css.userTableInfoBox}>
+        {isFetching && <Loader />}
+        {isErrorVisible && <Message type={MessageType.ERROR} text={'Error'} />}
+        {users.length === 0 && <Message text={'Info'} />}
+      </div>
+    </div>
   );
 };
 

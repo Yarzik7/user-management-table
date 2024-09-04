@@ -1,8 +1,24 @@
 .filterContainer {
   width: 100%;
-  margin-bottom: 8px;
-  display: flex;
-  justify-content: space-between;
+  padding: 15px 10px;
+  margin-bottom: 10px;
 
   background-color: var(--bg-table-head);
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.filterHeading {
+  margin-bottom: 14px;
+  color: var(--primary-white-color);
+}
+
+.filterInputList {
+  display: flex;
+  gap: 20px;
+}
+
+.filterInputListItem {
+  flex-basis: calc((100% - (var(--table-columns) - 1) * 20px) / var(--table-columns));
 }

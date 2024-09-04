@@ -4,6 +4,8 @@ import { selectFilterValues } from '../filter/selectors';
 import { IUser } from '../../interfaces/user.interface';
 
 const selectUsers = (state: RootState): IUser[] => state.users.users;
+const selectIsFetching = (state: RootState): boolean => state.users.isFetching;
+const selectError = (state: RootState) => state.users.error;
 
 const selectVisibleUsers = createSelector([selectFilterValues, selectUsers], (filter, users) =>
   users.filter(user =>
@@ -14,4 +16,4 @@ const selectVisibleUsers = createSelector([selectFilterValues, selectUsers], (fi
   )
 );
 
-export { selectUsers, selectVisibleUsers };
+export { selectUsers, selectIsFetching, selectError, selectVisibleUsers };

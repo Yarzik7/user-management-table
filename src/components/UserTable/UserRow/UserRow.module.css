@@ -1,24 +1,16 @@
 .userTableRow {
-  border-bottom: 1px solid rgb(182, 27, 27);
-}
-
-/* .userTableRow:nth-child(2n) {
-  background-color: rgb(235, 235, 235);
-  transition: background-color 0.2s ease-in;
+  transition: background-color var(--transition-duration) var(--timing-function),
+    color var(--transition-duration) var(--timing-function);
 }
 
 .userTableRow:hover {
-  background-color: rgb(170, 117, 220);
-} */
-
-.userTableCell {
-  width: calc(100% / 4);
-  padding: 10px;
-
-  border: 1px solid transparent;
-  border-bottom: 1px solid rgb(185, 185, 185);
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
 }
 
-.userTablePhoneCell {
-  /* text-align: right; */
+.userTableCell {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+
+  white-space: nowrap;
 }

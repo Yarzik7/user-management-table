@@ -6,7 +6,6 @@ import Filter from '../Filter/Filter';
 import UserTable from '../UserTable/UserTable';
 
 function App() {
-  // console.log("Render App");
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -14,13 +13,15 @@ function App() {
   }, [dispatch]);
 
   return (
-    <section>
-      <div className="container">
-        <h1 className="head">User Management Table</h1>
-        <Filter />
-        <UserTable />
-      </div>
-    </section>
+    <main>
+      <section className="section">
+        <div className="container">
+          <h1 className="visually-hidden">User Management Table</h1>
+          <Filter />
+          <UserTable />
+        </div>
+      </section>
+    </main>
   );
 }
 

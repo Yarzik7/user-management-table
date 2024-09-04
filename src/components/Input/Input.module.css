@@ -1,12 +1,12 @@
 .inputContainer {
-  padding: 10px;
-  flex-basis: calc(100% / 4);
+  width: 100%;
 }
 
 .label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 
+  text-transform: capitalize;
   color: var(--primary-white-color);
 }
 
@@ -19,13 +19,9 @@
   border: none;
   border-radius: 8px;
 
-  transition: outline 200ms ease-in;
+  transition: outline var(--transition-duration) var(--timing-function);
 
   &:focus {
     outline: 2px solid var(--accent-color);
   }
 }
-
-/* .input:focus {
-  outline: 1px solid var(--accent-color);
-} */

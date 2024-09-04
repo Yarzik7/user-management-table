@@ -1,14 +1,15 @@
 import { IUserRowProps } from './interfaces/UserRowProps.interface';
+import { FIELDS } from '../../../constants/fields';
 import css from './UserRow.module.css';
 
-const UserRow = ({ name, username, email, phone }: IUserRowProps) => {
-  //   console.log('Render UserRow');
+const UserRow = (userRowProps: IUserRowProps) => {
   return (
     <tr className={css.userTableRow}>
-      <td className={css.userTableCell}>{name}</td>
-      <td className={css.userTableCell}>{username}</td>
-      <td className={css.userTableCell}>{email}</td>
-      <td className={[css.userTableCell, css.userTablePhoneCell].join(' ')}>{phone}</td>
+      {FIELDS.map(field => (
+        <td key={field} className={css.userTableCell}>
+          {userRowProps[field]}
+        </td>
+      ))}
     </tr>
   );
 };

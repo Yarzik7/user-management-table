@@ -1,7 +1,23 @@
 :root {
   /* Colors */
   --accent-color: #3566c0;
+  --bg-color: #eaeaea;
   --bg-table-head: #0c2c69;
   --primary-white-color: #fff;
   --primary-text-color: rgb(17, 59, 138);
+  --border-color: #c9c9c9;
+  --info-color: rgb(78, 78, 78);
+  --error-color: rgb(112, 2, 2);
+  --bg-info-color: rgb(128, 128, 120, 0.5);
+  --bg-error-color: rgba(148, 2, 2, 0.5);
+
+  /* Sizes */
+  --layout-height: 60px;
+  --table-columns: 4;
+  --border-radius: 8px;
+
+  /* Transitions and animations */
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 250ms;
+  --spin-duration: 1000ms;
 }
