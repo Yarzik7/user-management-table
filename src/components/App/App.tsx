@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
 import { useAppDispatch } from '../../hooks/redux/reduxHooks';
+import { useEffect } from 'react';
+
 import { fetchUsers } from '../../redux/users/operations';
-import { APPLICATION_NAME } from '../../constants/application';
+
+import Layout from '../Layout/Layout';
 import Filter from '../Filter/Filter';
 import UserTable from '../UserTable/UserTable';
-import Layout from '../Layout/Layout';
+import { APPLICATION_NAME } from '../../constants/application';
 
 function App() {
   const dispatch = useAppDispatch();

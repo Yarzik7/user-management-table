@@ -1,10 +1,13 @@
 import React from 'react';
-import Input from '../Input/Input';
+import { useAppSelector, useAppDispatch } from '../../hooks/redux/reduxHooks';
+
 import { changeFilter } from '../../redux/filter/filterSlice';
 import { selectFilterValues } from '../../redux/filter/selectors';
-import { useAppSelector, useAppDispatch } from '../../hooks/redux/reduxHooks';
+
+import Input from '../Input/Input';
 import { IFilterState } from '../../interfaces/filter.interface';
 import { INPUT_CONFIG, FILTER_HEADING } from '../../constants/filterConfig';
+
 import css from './Filter.module.css';
 
 const Filter = () => {

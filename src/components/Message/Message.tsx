@@ -8,6 +8,7 @@ interface IMessageProps {
 
 const Message = ({ type = MessageType.INFO, text }: IMessageProps) => {
   const classNames: string = [css.message, css[type]].join(' ');
+
   return <p className={classNames}>{text}</p>;
 };
 
