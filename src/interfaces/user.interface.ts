@@ -6,8 +6,12 @@ export interface IUser {
   phone: string;
 }
 
+export interface IError {
+  status: number;
+  message: string;
+}
 export interface IUsersState {
   users: IUser[];
   isFetching: boolean;
-  error: unknown;
+  error: null | IError;
 }

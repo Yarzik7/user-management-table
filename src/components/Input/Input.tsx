@@ -17,6 +17,7 @@ const Input = ({ name, label, value, placeholder, onChange }: IInputProps) => {
         value={value}
         onChange={onChange}
         className={css.input}
+        autoComplete="off"
       />
     </div>
   );

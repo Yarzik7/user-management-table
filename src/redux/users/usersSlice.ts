@@ -12,7 +12,8 @@ const usersSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(fetchUsers.pending, usersReducers.handleFetchUsersPending)
-      .addCase(fetchUsers.fulfilled, usersReducers.handleFetchUsersFulfilled),
+      .addCase(fetchUsers.fulfilled, usersReducers.handleFetchUsersFulfilled)
+      .addCase(fetchUsers.rejected, usersReducers.handleFetchUsersRejected),
 });
 
 export const usersReducer = usersSlice.reducer;

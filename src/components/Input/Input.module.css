@@ -6,22 +6,24 @@
   display: block;
   margin-bottom: 12px;
 
+  font-size: 18px;
+  font-weight: 700;
   text-transform: capitalize;
-  color: var(--primary-white-color);
 }
 
 .input {
   width: 100%;
   padding: 8px 10px;
 
-  color: var(--primary-text-color);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--secondary-text-color);
 
   border: none;
   border-radius: 8px;
 
-  transition: outline var(--transition-duration) var(--timing-function);
-
   &:focus {
-    outline: 2px solid var(--accent-color);
+    outline: 2px solid var(--primary-text-color);
+    outline-offset: 4px;
   }
 }

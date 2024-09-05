@@ -1,9 +1,10 @@
-import './App.css';
 import { useEffect } from 'react';
 import { useAppDispatch } from '../../hooks/redux/reduxHooks';
 import { fetchUsers } from '../../redux/users/operations';
+import { APPLICATION_NAME } from '../../constants/application';
 import Filter from '../Filter/Filter';
 import UserTable from '../UserTable/UserTable';
+import Layout from '../Layout/Layout';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -13,15 +14,11 @@ function App() {
   }, [dispatch]);
 
   return (
-    <main>
-      <section className="section">
-        <div className="container">
-          <h1 className="visually-hidden">User Management Table</h1>
-          <Filter />
-          <UserTable />
-        </div>
-      </section>
-    </main>
+    <Layout>
+      <h1 className="visually-hidden">{APPLICATION_NAME}</h1>
+      <Filter />
+      <UserTable />
+    </Layout>
   );
 }
 

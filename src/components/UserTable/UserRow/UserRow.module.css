@@ -1,11 +1,13 @@
 .userTableRow {
+  font-weight: 500;
+  color: var(--secondary-text-color);
   transition: background-color var(--transition-duration) var(--timing-function),
     color var(--transition-duration) var(--timing-function);
 }
 
 .userTableRow:hover {
-  background-color: var(--accent-color);
-  color: var(--primary-white-color);
+  background-color: var(--tb-row-hover-color);
+  color: var(--primary-text-color);
 }
 
 .userTableCell {

@@ -7,20 +7,17 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 20px;
+
   letter-spacing: 1.2px;
   color: var(--primary-text-color);
 
   background-color: var(--bg-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-ul,
-li {
-  all: unset;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 h1,
@@ -41,4 +38,15 @@ p {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1400px;
 }

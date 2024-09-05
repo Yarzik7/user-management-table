@@ -3,7 +3,7 @@
   padding: 15px 10px;
   margin-bottom: 10px;
 
-  background-color: var(--bg-table-head);
+  background-color: var(--accent-color);
   border-radius: 10px;
 
   overflow: hidden;
@@ -11,12 +11,18 @@
 
 .filterHeading {
   margin-bottom: 14px;
-  color: var(--primary-white-color);
+  color: var(--primary-text-color);
 }
 
 .filterInputList {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 8px;
+
+  @media screen and (min-width: 680px) {
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 
 .filterInputListItem {

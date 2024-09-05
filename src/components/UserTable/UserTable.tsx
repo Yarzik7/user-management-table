@@ -1,7 +1,7 @@
 import UserRow from './UserRow/UserRow';
 import Loader from '../Loader/Loader';
 import Message from '../Message/Message';
-import { MessageType } from '../../constants/messages';
+import { MessageType, ERROR_MESSAGE, NO_DATA_MESSAGE } from '../../constants/messages';
 import { useAppSelector } from '../../hooks/redux/reduxHooks';
 import { selectVisibleUsers, selectIsFetching, selectError } from '../../redux/users/selectors';
 import { FIELDS } from '../../constants/fields';
@@ -11,8 +11,6 @@ const UserTable = () => {
   const users = useAppSelector(selectVisibleUsers);
   const isFetching = useAppSelector(selectIsFetching);
   const error = useAppSelector(selectError);
-
-  const isErrorVisible = !!error && !isFetching;
 
   return (
     <div className={css.userTableContainer}>
@@ -34,8 +32,8 @@ const UserTable = () => {
       </table>
       <div className={css.userTableInfoBox}>
         {isFetching && <Loader />}
-        {isErrorVisible && <Message type={MessageType.ERROR} text={'Error'} />}
-        {users.length === 0 && <Message text={'Info'} />}
+        {!!error && !isFetching && <Message type={MessageType.ERROR} text={ERROR_MESSAGE + ': ' + error.message} />}
+        {!users.length && !isFetching && !error && <Message text={NO_DATA_MESSAGE} />}
       </div>
     </div>
   );
