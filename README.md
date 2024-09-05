@@ -7,29 +7,29 @@ you to filter their display in real time by name, username, email and phone fiel
 
 ## Features
 
-- Display users in a table
+- ### Display users in a table
 
-![Users table]('https://github.com/Yarzik7/user-management-table/blob/main/user-management-table')
+![Users table](./assets/ReadMe/user-management-table.JPG)
 
-- Filter users data in real time
+- ### Filter users data in real time
 
-![Users filter]('./assets/ReadMe/users-filter.JPG')
+![Users filter](./assets/ReadMe/users-filter.JPG)
 
-- Responsive layout
+- ### Responsive layout
 
-![Mobile view]('./assets/ReadMe/user-table-mobile.JPG')
+![Mobile view](./assets/ReadMe/user-table-mobile.JPG)
 
-- Loader and notifications when working with data
+- ### Loader and notifications when working with data
 
-### Loader
+#### Loader
 
-![Loader]('./assets/ReadMe/users-loader.JPG')
+![Loader](./assets/ReadMe/users-loader.JPG)
 
-### Notifications
+#### Notifications
 
-![No users]('./assets/ReadMe/no-users-message.JPG')
+![No users](./assets/ReadMe/no-users-message.JPG)
 
-![Users error]('./assets/ReadMe/users-error-message.JPG')
+![Users error](./assets/ReadMe/users-error-message.JPG)
 
 ## Technology stack
 
