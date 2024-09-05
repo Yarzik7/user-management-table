@@ -7,6 +7,7 @@ import Message from '../Message/Message';
 
 import { MessageType, ERROR_MESSAGE, NO_DATA_MESSAGE } from '../../constants/messages';
 import { FIELDS } from '../../constants/fields';
+import { USERS_TABLE_CAPTION } from '../../constants/table';
 
 import css from './UserTable.module.css';
 
@@ -15,13 +16,16 @@ const UserTable = () => {
   const isFetching = useAppSelector(selectIsFetching);
   const error = useAppSelector(selectError);
 
+  const shouldShowTableInfoBox = isFetching || !!error || !users.length;
+
   return (
     <div className={css.userTableContainer}>
       <table className={css.userTable}>
+        <caption className="visually-hidden">{USERS_TABLE_CAPTION}</caption>
         <thead>
           <tr className={css.userTableHeadRow}>
             {FIELDS.map(field => (
-              <th key={field} className={css.userTableHead}>
+              <th key={field} scope="col" className={css.userTableHead}>
                 {field}
               </th>
             ))}
@@ -35,11 +39,13 @@ const UserTable = () => {
         </tbody>
       </table>
 
-      <div className={css.userTableInfoBox}>
-        {isFetching && <Loader />}
-        {!!error && !isFetching && <Message type={MessageType.ERROR} text={ERROR_MESSAGE + ': ' + error.message} />}
-        {!users.length && !isFetching && !error && <Message text={NO_DATA_MESSAGE} />}
-      </div>
+      {shouldShowTableInfoBox && (
+        <div className={css.userTableInfoBox}>
+          {isFetching && <Loader />}
+          {!!error && !isFetching && <Message type={MessageType.ERROR} text={ERROR_MESSAGE + ': ' + error.message} />}
+          {!users.length && !isFetching && !error && <Message text={NO_DATA_MESSAGE} />}
+        </div>
+      )}
     </div>
   );
 };

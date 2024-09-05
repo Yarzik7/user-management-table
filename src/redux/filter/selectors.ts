@@ -1,10 +1,6 @@
 import { RootState } from '../store';
+import { IFilterState } from '../../interfaces/filter.interface';
 
-const selectName = (state: RootState) => state.filter.name;
-const selectUsername = (state: RootState) => state.filter.username;
-const selectEmail = (state: RootState) => state.filter.email;
-const selectPhone = (state: RootState) => state.filter.phone;
+const selectFilterValues = (state: RootState): IFilterState => state.filter;
 
-const selectFilterValues = (state: RootState) => state.filter;
-
-export { selectName, selectUsername, selectEmail, selectPhone, selectFilterValues };
+export { selectFilterValues };

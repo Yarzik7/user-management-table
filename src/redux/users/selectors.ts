@@ -1,11 +1,11 @@
 import { RootState } from '../store';
 import { createSelector } from '@reduxjs/toolkit';
 import { selectFilterValues } from '../filter/selectors';
-import { IUser } from '../../interfaces/user.interface';
+import { IUser, IError } from '../../interfaces/user.interface';
 
 const selectUsers = (state: RootState): IUser[] => state.users.users;
 const selectIsFetching = (state: RootState): boolean => state.users.isFetching;
-const selectError = (state: RootState) => state.users.error;
+const selectError = (state: RootState): null | IError => state.users.error;
 
 const selectVisibleUsers = createSelector([selectFilterValues, selectUsers], (filter, users) =>
   users.filter(user =>

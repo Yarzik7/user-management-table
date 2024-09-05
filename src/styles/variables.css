@@ -1,16 +1,17 @@
 :root {
   /* Colors */
+  --accent-color: #0c2c69;
+  --tb-row-hover-color: #3566c0;
   --bg-color: #eaeaea;
   --primary-text-color: #fff;
   --secondary-text-color: #113b8a;
   --border-color: #c9c9c9;
-  --info-color: rgb(78, 78, 78);
-  --error-color: rgb(112, 2, 2);
-  --bg-info-color: rgb(128, 128, 120, 0.5);
-  --bg-error-color: rgba(148, 2, 2, 0.5);
-
-  --accent-color: #0c2c69;
-  --tb-row-hover-color: #3566c0;
+  --info-color: #4e4e4e;
+  --error-color: #700202;
+  --bg-info-color: #80807880;
+  --bg-error-color: #94020280;
+  --container-shadow: 0px 3px 10px -3px #1f309e75;
+  -moz-box-shadow: 0px 3px 10px -3px #1f309e75;
 
   /* Sizes */
   --table-columns: 4;
