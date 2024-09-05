@@ -9,7 +9,7 @@ you to filter their display in real time by name, username, email and phone fiel
 
 - Display users in a table
 
-![Users table]('./assets/ReadMe/user-management-table.JPG')
+![Users table]('https://github.com/Yarzik7/user-management-table/blob/main/user-management-table')
 
 - Filter users data in real time
 
