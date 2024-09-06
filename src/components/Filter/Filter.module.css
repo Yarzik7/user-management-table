@@ -1,4 +1,6 @@
 .filterContainer {
+  position: relative;
+
   width: 100%;
   padding: 15px 10px;
   margin-bottom: 11px;
@@ -13,6 +15,16 @@
 .filterHeading {
   margin-bottom: 14px;
   color: var(--primary-text-color);
+}
+
+.clearFilterButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  & > svg {
+    transform: scaleX(-1);
+  }
 }
 
 .filterInputList {

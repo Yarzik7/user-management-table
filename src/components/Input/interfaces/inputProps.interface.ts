@@ -3,5 +3,7 @@ export interface IInputProps {
   name: string;
   value: string;
   placeholder: string;
+  type?: string;
+  buttonOnClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

@@ -5,6 +5,8 @@ import { changeFilter } from '../../redux/filter/filterSlice';
 import { selectFilterValues } from '../../redux/filter/selectors';
 
 import Input from '../Input/Input';
+// import Icon from '../Icon/Icon';
+import Button from '../Button/Button';
 import { IFilterState } from '../../interfaces/filter.interface';
 import { INPUT_CONFIG, FILTER_HEADING } from '../../constants/filterConfig';
 
@@ -20,6 +22,11 @@ const Filter = () => {
     dispatch(changeFilter({ field: name as keyof IFilterState, value }));
   };
 
+  const onClearFilter = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    const { name } = e.currentTarget;
+    dispatch(changeFilter({ field: name as keyof IFilterState | 'all', value: '' }));
+  };
+
   return (
     <div className={css.filterContainer}>
       <h2 className={css.filterHeading}>{FILTER_HEADING}</h2>
@@ -32,10 +39,19 @@ const Filter = () => {
               placeholder={placeholder}
               value={filterValues[name]}
               onChange={onChangeFilter}
+              buttonOnClick={onClearFilter}
             />
           </li>
         ))}
       </ul>
+      <Button
+        name="all"
+        buttonIconSize={26}
+        buttonIconName="clean"
+        ariaLabel="Clean filter"
+        onClick={onClearFilter}
+        className={css.clearFilterButton}
+      />
     </div>
   );
 };

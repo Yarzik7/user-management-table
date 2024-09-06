@@ -27,3 +27,15 @@
     outline-offset: 3px;
   }
 }
+
+.inputFlexBox {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+
+.clearFilterButton {
+  & > svg {
+    transform: scaleX(-1);
+  }
+}

@@ -6,6 +6,6 @@ export interface IFilterState {
 }
 
 export interface IChangeFilterPayload {
-  field: keyof IFilterState;
+  field: keyof IFilterState | 'all';
   value: string;
 }

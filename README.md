@@ -9,7 +9,7 @@ you to filter their display in real time by name, username, email and phone fiel
 
 - ### Display users in a table
 
-![Users table](./assets/ReadMe/user-management-table.JPG)
+![Users table](./assets/ReadMe/user-manager-table.JPG)
 
 - ### Filter users data in real time
 
@@ -43,8 +43,8 @@ you to filter their display in real time by name, username, email and phone fiel
 1. **Clone the repository to your local machine:**
 
    ```bash
-   git clone https://github.com/your-username/project-name.git
-   cd project-name
+   git clone https://github.com/Yarzik7/user-management-table.git
+   cd user-management-table
    ```
 
 2. **Install the dependencies:**

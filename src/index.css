@@ -27,6 +27,12 @@ p {
   padding: 0;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -48,5 +54,5 @@ p {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-  max-width: 1400px;
+  max-width: 1440px;
 }
